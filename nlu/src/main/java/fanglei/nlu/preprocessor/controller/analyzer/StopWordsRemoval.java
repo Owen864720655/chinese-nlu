@@ -1,4 +1,4 @@
-package fanglei.nlu.stopwordsremoval;
+package fanglei.nlu.preprocessor.controller.analyzer;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +9,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class StopWordsRemoval
+import fanglei.util.Utils;
+
+public class StopWordsRemoval implements IAnalyzer
 {
 	// public static final String STOP_WORD_TABLE = "." + File.separator + "src"
 	// + File.separator + "main" + File.separator + "resources"
@@ -21,6 +23,13 @@ public class StopWordsRemoval
 
 	private static Set<String> stopWords = new HashSet<String>();
 
+	private static final StopWordsRemoval INSTANCE = new StopWordsRemoval();
+
+	public static StopWordsRemoval getInstance()
+	{
+		return INSTANCE;
+	}
+
 	public static void readStopWords(String path) throws IOException
 	{
 		stopWords.clear();
@@ -30,7 +39,6 @@ public class StopWordsRemoval
 		String stopWord = null;
 		while ((stopWord = br.readLine()) != null)
 		{
-			System.out.println(stopWord);
 			stopWords.add(stopWord);
 		}
 		fr.close();
@@ -49,14 +57,7 @@ public class StopWordsRemoval
 		}
 	}
 
-	private static final StopWordsRemoval INSTANCE = new StopWordsRemoval();
-
-	public static StopWordsRemoval getInstance()
-	{
-		return INSTANCE;
-	}
-
-	public List<String> remove(List<String> words)
+	public String remove(String[] words)
 	{
 		List<String> result = new ArrayList<String>();
 
@@ -67,6 +68,7 @@ public class StopWordsRemoval
 				result.add(word);
 			}
 		}
-		return result;
+		return Utils
+				.tokensToUtterance(result.toArray(new String[result.size()]));
 	}
 }

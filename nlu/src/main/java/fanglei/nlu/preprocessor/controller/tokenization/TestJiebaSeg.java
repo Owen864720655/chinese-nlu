@@ -1,4 +1,4 @@
-package fanglei.nlu.segmentation;
+package fanglei.nlu.preprocessor.controller.tokenization;
 
 public class TestJiebaSeg
 {
