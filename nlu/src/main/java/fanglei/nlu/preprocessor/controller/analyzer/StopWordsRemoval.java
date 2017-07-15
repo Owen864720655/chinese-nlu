@@ -19,7 +19,7 @@ public class StopWordsRemoval implements IAnalyzer
 	public static final String STOP_WORD_TABLE = "." + File.separator + "src"
 			+ File.separator + "main" + File.separator + "resources"
 			+ File.separator + "models" + File.separator + "stopwords"
-			+ File.separator + "stopword.dic";
+			+ File.separator + "userdic.txt";
 
 	private static Set<String> stopWords = new HashSet<String>();
 
