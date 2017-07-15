@@ -5,7 +5,13 @@ import java.util.Arrays;
 import fanglei.nlu.preprocessor.Preprocessor;
 import fanglei.nlu.preprocessor.model.PreprocessorParam;
 
-public class PreprocessTest
+/**
+ * Test Preprocessor
+ * 
+ * @author Owen
+ *
+ */
+public class PreprocessorTest
 {
 
 	public static void main(String[] args) throws Exception

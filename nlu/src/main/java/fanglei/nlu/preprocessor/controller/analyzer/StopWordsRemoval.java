@@ -21,8 +21,14 @@ public class StopWordsRemoval implements IAnalyzer
 			+ File.separator + "models" + File.separator + "stopwords"
 			+ File.separator + "userdic.txt";
 
+	/**
+	 * Stop words set
+	 */
 	private static Set<String> stopWords = new HashSet<String>();
 
+	/**
+	 * Singleton mode
+	 */
 	private static final StopWordsRemoval INSTANCE = new StopWordsRemoval();
 
 	public static StopWordsRemoval getInstance()
@@ -30,6 +36,12 @@ public class StopWordsRemoval implements IAnalyzer
 		return INSTANCE;
 	}
 
+	/**
+	 * Read the stop words from local file
+	 * 
+	 * @param path
+	 * @throws IOException
+	 */
 	public static void readStopWords(String path) throws IOException
 	{
 		stopWords.clear();
@@ -45,6 +57,10 @@ public class StopWordsRemoval implements IAnalyzer
 		br.close();
 	}
 
+	/**
+	 * 
+	 * Constructor
+	 */
 	private StopWordsRemoval()
 	{
 		try

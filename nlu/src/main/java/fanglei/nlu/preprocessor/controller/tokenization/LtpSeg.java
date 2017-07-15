@@ -10,11 +10,6 @@ import fanglei.nlu.constant.LtpConstant;
 
 public class LtpSeg implements ITokenizer
 {
-	/**
-	 * 
-	 * @author Owen
-	 *
-	 */
 	private static class SingletonHolder
 	{
 		private static final LtpSeg INSTANCE = new LtpSeg();
@@ -46,10 +41,10 @@ public class LtpSeg implements ITokenizer
 		try
 		{
 			String text = URLEncoder.encode(sentence, "utf-8");
-			URL url = new URL("http://api.ltp-cloud.com/analysis/?"
-					+ "api_key=" + LtpConstant.API_KEY + "&" + "text=" + text
-					+ "&" + "format=" + LtpConstant.FORMAT_PLAIN + "&"
-					+ "pattern=" + LtpConstant.PATTERN_WORD_SEGMENTATION);
+			URL url = new URL(LtpConstant.URL_BASE + "api_key="
+					+ LtpConstant.API_KEY + "&" + "text=" + text + "&"
+					+ "format=" + LtpConstant.FORMAT_PLAIN + "&" + "pattern="
+					+ LtpConstant.PATTERN_WORD_SEGMENTATION);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.connect();
 			BufferedReader innet = new BufferedReader(new InputStreamReader(

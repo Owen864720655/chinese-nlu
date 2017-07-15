@@ -32,11 +32,18 @@ public class LtpPosTagger implements IPosTagger
 		return SingletonHolder.INSTANCE;
 	}
 
+	/**
+	 * Get the POS tags
+	 * 
+	 * @param sentence
+	 * @return
+	 * @throws IOException
+	 */
 	private static String[] tag(String sentence) throws IOException
 	{
 		String result = "";
 		String text = URLEncoder.encode(sentence, "utf-8");
-		URL url = new URL("http://api.ltp-cloud.com/analysis/?" + "api_key="
+		URL url = new URL(LtpConstant.URL_BASE + "api_key="
 				+ LtpConstant.API_KEY + "&" + "text=" + text + "&" + "format="
 				+ LtpConstant.FORMAT_PLAIN + "&" + "pattern="
 				+ LtpConstant.PATTERN_POS_TAGGING);

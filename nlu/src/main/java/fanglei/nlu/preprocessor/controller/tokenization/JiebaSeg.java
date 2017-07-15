@@ -7,11 +7,6 @@ import com.huaban.analysis.jieba.JiebaSegmenter;
 public class JiebaSeg implements ITokenizer
 {
 
-	/**
-	 * 
-	 * @author Owen
-	 *
-	 */
 	private static class SingletonHolder
 	{
 		private static final JiebaSeg INSTANCE = new JiebaSeg();
