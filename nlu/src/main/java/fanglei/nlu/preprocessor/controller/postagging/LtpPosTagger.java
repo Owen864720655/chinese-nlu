@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import fanglei.nlu.preprocessor.LtpConstant;
+import fanglei.nlu.constant.LtpConstant;
 import fanglei.nlu.preprocessor.model.PosTag;
 
 public class LtpPosTagger implements IPosTagger

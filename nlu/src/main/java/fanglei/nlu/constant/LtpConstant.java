@@ -1,4 +1,4 @@
-package fanglei.nlu.preprocessor;
+package fanglei.nlu.constant;
 
 public class LtpConstant
 {

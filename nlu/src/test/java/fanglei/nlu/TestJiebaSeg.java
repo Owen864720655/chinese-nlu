@@ -1,4 +1,6 @@
-package fanglei.nlu.preprocessor.controller.tokenization;
+package fanglei.nlu;
+
+import fanglei.nlu.preprocessor.controller.tokenization.JiebaSeg;
 
 public class TestJiebaSeg
 {
