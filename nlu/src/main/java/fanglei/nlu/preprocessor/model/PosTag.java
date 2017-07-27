@@ -60,7 +60,7 @@ public class PosTag
 	@Override
 	public String toString()
 	{
-		return "PosTagDefinition [token=" + token + ", tag=" + tag + "]";
+		return "PosTag [token=" + token + ", tag=" + tag + "]";
 	}
 
 	@Override
