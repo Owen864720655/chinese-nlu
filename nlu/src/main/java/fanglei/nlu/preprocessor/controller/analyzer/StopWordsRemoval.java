@@ -77,6 +77,10 @@ public class StopWordsRemoval implements IAnalyzer
 	{
 		List<String> result = new ArrayList<String>();
 
+		if (words == null || words.length == 0)
+		{
+			return null;
+		}
 		for (String word : words)
 		{
 			if (!stopWords.contains(word))
